@@ -1,14 +1,134 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Мой фронт</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrekMix - Your Adventure Awaits</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Привет, фронтенд!</h1>
-  <button onclick="sayHello()">Нажми меня</button>
-  <script src="script.js"></script>
+    <header>
+        <nav>
+            <div class="logo">TrekMix</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#tours">Tours</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <h1>Discover Your Next Adventure</h1>
+            <p>Choose from our carefully curated selection of tours</p>
+        </section>
+
+        <section id="tours" class="tour-categories">
+            <h2>Our Tour Categories</h2>
+            <div class="tour-types">
+                <div class="tour-type" id="guided-hikes">
+                    <h3>Guided Hikes</h3>
+                    <div class="tour-packages">
+                        <div class="tour-card" data-tour="hike-1">
+                            <h4>Kyzyl-Tuu to Korgon-Tash</h4>
+                            <p>Experience the beauty of Kyrgyzstan's mountains</p>
+                            <button onclick="showTourDetails('hike-1')">Learn More</button>
+                        </div>
+                        <div class="tour-card" data-tour="hike-2">
+                            <h4>Tash-Rabat to Osh</h4>
+                            <p>Explore the Kara-Shoro Region</p>
+                            <button onclick="showTourDetails('hike-2')">Learn More</button>
+                        </div>
+                        <div class="tour-card" data-tour="hike-3">
+                            <h4>Shyrkyty Gorge to Ichke</h4>
+                            <p>Via Tash-Rabat and Chatyr-Kol</p>
+                            <button onclick="showTourDetails('hike-3')">Learn More</button>
+                        </div>
+                        <div class="tour-card" data-tour="hike-4">
+                            <h4>1-May Village to Kel-Suu Lake</h4>
+                            <p>Discover the pristine Kel-Suu Lake</p>
+                            <button onclick="showTourDetails('hike-4')">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tour-type" id="horse-trekking">
+                    <h3>Horse Trekking Tours</h3>
+                    <div class="tour-packages">
+                        <div class="tour-card" data-tour="horse-1">
+                            <h4>Caravan Sarai to Chatyr-Kol</h4>
+                            <p>Trek through ancient Silk Road paths</p>
+                            <button onclick="showTourDetails('horse-1')">Learn More</button>
+                        </div>
+                        <div class="tour-card" data-tour="horse-2">
+                            <h4>Caravan Sarai to Kel-Suu</h4>
+                            <p>Journey to the hidden lake</p>
+                            <button onclick="showTourDetails('horse-2')">Learn More</button>
+                        </div>
+                        <div class="tour-card" data-tour="horse-3">
+                            <h4>Kel-Suu to the Waterfall</h4>
+                            <p>Scenic mountain waterfall trek</p>
+                            <button onclick="showTourDetails('horse-3')">Learn More</button>
+                        </div>
+                        <div class="tour-card" data-tour="horse-4">
+                            <h4>Tash-Rabat to Osh</h4>
+                            <p>Multi-day adventure journey</p>
+                            <button onclick="showTourDetails('horse-4')">Learn More</button>
+                        </div>
+                        <div class="tour-card" data-tour="horse-5">
+                            <h4>Son-Kol to Tash-Rabat</h4>
+                            <p>Lake to caravanserai expedition</p>
+                            <button onclick="showTourDetails('horse-5')">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tour-type" id="road-trips">
+                    <h3>Road Trip Tours</h3>
+                    <div class="tour-packages">
+                        <div class="tour-card" data-tour="road-1">
+                            <h4>Bishkek to Son-Kol & Tash-Rabat</h4>
+                            <p>Capital to mountain lake adventure</p>
+                            <button onclick="showTourDetails('road-1')">Learn More</button>
+                        </div>
+                        <div class="tour-card" data-tour="road-2">
+                            <h4>Southern Kyrgyz Silk Road</h4>
+                            <p>From At-Bashy to Kel-Suu</p>
+                            <button onclick="showTourDetails('road-2')">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div id="tour-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div id="tour-details"></div>
+                <div class="booking-section">
+                    <h4>Book This Tour</h4>
+                    <form id="booking-form">
+                        <input type="date" id="tour-date" required>
+                        <input type="number" id="participants" min="1" placeholder="Number of participants" required>
+                        <button type="submit">Book Now</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <section id="reviews" class="reviews-section">
+            <h2>What Our Tourists Say</h2>
+            <div class="reviews-container"></div>
+            <button id="add-review-btn">Add Your Review</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 TrekMix. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
